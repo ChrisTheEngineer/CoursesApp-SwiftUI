@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var show = false; //to switch between animation states
+    @State var show = false; //to switch between animation states 
     @State var viewState = CGSize.zero //store x and y coordinates when moving card
     
     var body: some View {
