@@ -12,6 +12,8 @@ struct ContentView: View {
     @State var show = false; //to switch between animation states
     @State var viewState = CGSize.zero //store x and y coordinates when moving card
     @State var showCard = false;
+    @State var bottomState = CGSize.zero
+    @State var showFull = false;
     
     var body: some View {
         ZStack {
@@ -80,10 +82,37 @@ struct ContentView: View {
                     }
             )
             
+            //Text("\(bottomState.height)").offset(y:-300) //debug to show current anchor height
+            
             BottomCardView()
                 .offset(x: 0, y: showCard ? 360 : 1000)
+                .offset(y: bottomState.height)
                 .blur(radius: show ? 20 : 0)
                 .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
+                .gesture(
+                    DragGesture().onChanged { value in
+                        self.bottomState = value.translation
+                        if self.showFull {
+                            self.bottomState.height += -300
+                        }
+                        if self.bottomState.height < -300 {
+                            self.bottomState.height = -300
+                        }
+                    }
+                    .onEnded { value in
+                        if self.bottomState.height > 50 { //drag to dismiss
+                            self.showCard = false;
+                        }
+                        if (self.bottomState.height < -100 && !self.showFull) || (self.bottomState.height < -250 && self.showFull){
+                            self.bottomState.height = -300
+                            self.showFull = true;
+                        }
+                        else {
+                            self.bottomState = .zero
+                            self.showFull = false;
+                        }
+                    }
+            )
         }
     }
 }
