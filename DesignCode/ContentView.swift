@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var show = false; //to switch between animation states
+    @State var viewState = CGSize.zero //store x and y coordinates when moving card
     
     var body: some View {
         ZStack {
@@ -22,6 +23,7 @@ struct ContentView: View {
                 .cornerRadius(20)
                 .shadow(radius: 20)
                 .offset(x: 0, y: show ? -400 : -40)
+                .offset(x: viewState.width, y: viewState.height) //current location
                 .scaleEffect(0.9)
                 .rotationEffect(.degrees(show ? 0 : 10)) //can omit the type
                 .rotation3DEffect(.degrees(10), axis: (x: 10.0, y: 0, z: 0))
@@ -33,6 +35,7 @@ struct ContentView: View {
                 .cornerRadius(20)
                 .shadow(radius: 20)
                 .offset(x: 0, y: show ? -200 : -20)
+                .offset(x: viewState.width, y: viewState.height) //current location
                 .scaleEffect(0.95)
                 .rotationEffect(Angle.degrees(show ? 0 : 5)) //longer way of above
                 .rotation3DEffect(.degrees(5), axis: (x: 10.0, y: 0, z: 0))
@@ -40,10 +43,22 @@ struct ContentView: View {
                 .animation(.easeInOut(duration: 0.3))
             
             CardView()
+                .offset(x: viewState.width, y: viewState.height) //current location
                 .blendMode(.hardLight)
+                .animation(.spring(response: 0.3, dampingFraction: 0.6, blendDuration: 0)) //animation to return
                 .onTapGesture {
                     self.show.toggle()
             }
+                .gesture( //move card gesture
+                    DragGesture().onChanged { value in
+                        self.viewState = value.translation
+                        self.show = true
+                    }
+                    .onEnded { value in
+                        self.viewState = .zero
+                        self.show = false
+                    }
+            )
             
             BottomCardView()
                 .blur(radius: show ? 20 : 0)
