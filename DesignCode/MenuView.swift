@@ -17,7 +17,7 @@ struct MenuView: View {
                 Text("Christian - 25% completed")
                     .font(.caption)
                 
-                Color.white
+                Color.white //progress bar
                     .frame(width: 38, height: 6)
                     .cornerRadius(3)
                     .frame(width: 130, height: 6, alignment: .leading) //current progress
