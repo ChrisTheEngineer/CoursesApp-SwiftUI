@@ -17,26 +17,7 @@ struct Home: View {
             Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
                 .edgesIgnoringSafeArea(.all) //applies color to notch area and lower area
             
-            VStack {
-                HStack {
-                    Text("Watching")
-                        .font(.system(size: 28, weight: .bold))
-                    
-                    Spacer()
-                    
-                    Button(action: { self.showProfile.toggle() }) {
-                        Image("logo")
-                            .renderingMode(.original)
-                            .resizable()
-                            .frame(width: 36, height: 36)
-                            .clipShape(Circle())
-                    }
-                }
-                .padding(.horizontal)
-                .padding(.top, 30)
-                
-                Spacer()
-            }
+            HomeView(showProfile: $showProfile) //binding requires dollar sign before
                 .padding(.top, 44) //44 is size of top status bar
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
@@ -44,11 +25,12 @@ struct Home: View {
                 .offset(y: showProfile ? -450 : 0)
                 .rotation3DEffect(Angle(degrees: showProfile ? Double(viewState.height / 10) - 10: 0), axis: (x: 10.0, y: 0, z: 0))
                 .scaleEffect(showProfile ? 0.9 : 1)
-                .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))            .edgesIgnoringSafeArea(.all)
+                .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
+                .edgesIgnoringSafeArea(.all)
             
             MenuView()
                 .background(Color.black.opacity(0.001)) //set opacity to small number to be interactable but not visible
-                .offset(y: showProfile ? 0 : 1000)
+                .offset(y: showProfile ? 0 : screen.height)
                 .offset(y: viewState.height)
                 .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
                 .onTapGesture {
@@ -74,3 +56,19 @@ struct Home_Previews: PreviewProvider {
         Home()
     }
 }
+
+struct AvatarView: View {
+    @Binding var showProfile: Bool //does not hae a default value, shared across multiple views
+    
+    var body: some View {
+        Button(action: { self.showProfile.toggle() }) {
+            Image("logo")
+                .renderingMode(.original)
+                .resizable()
+                .frame(width: 36, height: 36)
+                .clipShape(Circle())
+        }
+    }
+}
+
+let screen = UIScreen.main.bounds //dimension of screen. if declared outside, can be used across entire app (global variable)
