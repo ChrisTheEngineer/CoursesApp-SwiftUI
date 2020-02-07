@@ -25,9 +25,15 @@ struct HomeView: View {
                 .padding(.top, 30)
             
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 30) { //when embeded in HStack, will have it show horizontally
+                HStack(spacing: 20) { //when embeded in HStack, will have it show horizontally
                     ForEach(sectionData) { item in
-                        SectionView(section: item)
+                        GeometryReader { geometry in
+                            SectionView(section: item)
+                                .rotation3DEffect(Angle(degrees:
+                                    Double(geometry.frame(in: .global).minX - 30) / -20 //minX is left side location, -30 offset for no starting angle, -20 so not too large of animation
+                                ), axis: (x: 0, y: 10.0, z: 0)) //y effect on hor axis
+                        }
+                        .frame(width: 275, height: 275) //size of card
                     }
                 }
                 .padding(30)
