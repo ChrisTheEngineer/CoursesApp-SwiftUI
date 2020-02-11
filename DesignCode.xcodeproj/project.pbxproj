@@ -18,6 +18,7 @@
 		4D25B98823F2673B00EA8743 /* UpdateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D25B98723F2673B00EA8743 /* UpdateList.swift */; };
 		4D25B98A23F26CB500EA8743 /* UpdateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D25B98923F26CB500EA8743 /* UpdateDetail.swift */; };
 		4D25B98C23F2700B00EA8743 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D25B98B23F2700B00EA8743 /* UpdateStore.swift */; };
+		4D25B98E23F2751C00EA8743 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D25B98D23F2751C00EA8743 /* TabBar.swift */; };
 		4D2AE1E723ED409F0086FD85 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2AE1E623ED409F0086FD85 /* HomeView.swift */; };
 		4DADF82B23EBF82F00D96F0B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DADF82A23EBF82F00D96F0B /* MenuView.swift */; };
 		4DADF82D23EC08C800D96F0B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DADF82C23EC08C800D96F0B /* Home.swift */; };
@@ -41,7 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4D0671FF23EB94E000CCC484 /* DesignCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D0671FF23EB94E000CCC484 /* Design+Code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Design+Code.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D06720223EB94E000CCC484 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D06720423EB94E000CCC484 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4D06720623EB94E000CCC484 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +59,7 @@
 		4D25B98723F2673B00EA8743 /* UpdateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateList.swift; sourceTree = "<group>"; };
 		4D25B98923F26CB500EA8743 /* UpdateDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetail.swift; sourceTree = "<group>"; };
 		4D25B98B23F2700B00EA8743 /* UpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
+		4D25B98D23F2751C00EA8743 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		4D2AE1E623ED409F0086FD85 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4DADF82A23EBF82F00D96F0B /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		4DADF82C23EC08C800D96F0B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -101,7 +103,7 @@
 		4D06720023EB94E000CCC484 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4D0671FF23EB94E000CCC484 /* DesignCode.app */,
+				4D0671FF23EB94E000CCC484 /* Design+Code.app */,
 				4D06721523EB94E800CCC484 /* DesignCodeTests.xctest */,
 				4D06722023EB94E800CCC484 /* DesignCodeUITests.xctest */,
 			);
@@ -118,6 +120,7 @@
 				4D25B98723F2673B00EA8743 /* UpdateList.swift */,
 				4D25B98923F26CB500EA8743 /* UpdateDetail.swift */,
 				4D25B98B23F2700B00EA8743 /* UpdateStore.swift */,
+				4D25B98D23F2751C00EA8743 /* TabBar.swift */,
 				4DADF82C23EC08C800D96F0B /* Home.swift */,
 				4D2AE1E623ED409F0086FD85 /* HomeView.swift */,
 				4D06720823EB94E700CCC484 /* Assets.xcassets */,
@@ -171,7 +174,7 @@
 			);
 			name = DesignCode;
 			productName = DesignCode;
-			productReference = 4D0671FF23EB94E000CCC484 /* DesignCode.app */;
+			productReference = 4D0671FF23EB94E000CCC484 /* Design+Code.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4D06721423EB94E800CCC484 /* DesignCodeTests */ = {
@@ -294,6 +297,7 @@
 				4D2AE1E723ED409F0086FD85 /* HomeView.swift in Sources */,
 				4D06720523EB94E000CCC484 /* SceneDelegate.swift in Sources */,
 				4D06720723EB94E000CCC484 /* ContentView.swift in Sources */,
+				4D25B98E23F2751C00EA8743 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,7 +472,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.syntheticfox.DesignCode;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Design+Code";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -488,7 +492,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.syntheticfox.DesignCode;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Design+Code";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
