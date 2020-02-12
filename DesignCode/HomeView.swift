@@ -32,13 +32,29 @@ struct HomeView: View {
                         .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
                         .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)
                 }
-                .sheet(isPresented: $showUpdate) { //brings up modal window
-                    UpdateList()
+                    .sheet(isPresented: $showUpdate) { //brings up modal window
+                        UpdateList()
                 }
             }
             .padding(.horizontal)
                 .padding(.leading, 14) //align title with card, 14 + default 16 = 30 (same as card)
                 .padding(.top, 30)
+            
+            HStack(spacing: 12.0) {
+                RingView(color1: #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1), color2: #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), width: 44, height: 44, percent: 65, show: .constant(true))
+                VStack(alignment: .leading, spacing: 4.0) {
+                    Text("6 minutes left")
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                    Text("Watched 10 mins today")
+                        .font(.caption)
+                }
+            }
+            .padding(8)
+            .background(Color.white)
+            .cornerRadius(20)
+            .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 20)
+            .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 20) { //when embeded in HStack, will have it show horizontally
@@ -49,7 +65,7 @@ struct HomeView: View {
                                     Double(geometry.frame(in: .global).minX - 30) / -20 //minX is left side location, -30 offset for no starting angle, -20 so not too large of animation
                                 ), axis: (x: 0, y: 10.0, z: 0)) //y effect on hor axis
                         }
-                        .frame(width: 275, height: 275) //size of card
+                            .frame(width: 275, height: 275) //size of card
                     }
                 }
                 .padding(30)
