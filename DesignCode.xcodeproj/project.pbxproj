@@ -19,6 +19,7 @@
 		4D25B98A23F26CB500EA8743 /* UpdateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D25B98923F26CB500EA8743 /* UpdateDetail.swift */; };
 		4D25B98C23F2700B00EA8743 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D25B98B23F2700B00EA8743 /* UpdateStore.swift */; };
 		4D25B98E23F2751C00EA8743 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D25B98D23F2751C00EA8743 /* TabBar.swift */; };
+		4D25B99223F3E3EC00EA8743 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D25B99123F3E3EC00EA8743 /* RingView.swift */; };
 		4D2AE1E723ED409F0086FD85 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2AE1E623ED409F0086FD85 /* HomeView.swift */; };
 		4DADF82B23EBF82F00D96F0B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DADF82A23EBF82F00D96F0B /* MenuView.swift */; };
 		4DADF82D23EC08C800D96F0B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DADF82C23EC08C800D96F0B /* Home.swift */; };
@@ -60,6 +61,7 @@
 		4D25B98923F26CB500EA8743 /* UpdateDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetail.swift; sourceTree = "<group>"; };
 		4D25B98B23F2700B00EA8743 /* UpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
 		4D25B98D23F2751C00EA8743 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		4D25B99123F3E3EC00EA8743 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		4D2AE1E623ED409F0086FD85 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4DADF82A23EBF82F00D96F0B /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		4DADF82C23EC08C800D96F0B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		4D0671F623EB94E000CCC484 = {
 			isa = PBXGroup;
 			children = (
+				4D25B99123F3E3EC00EA8743 /* RingView.swift */,
 				4D06720123EB94E000CCC484 /* DesignCode */,
 				4D06721823EB94E800CCC484 /* DesignCodeTests */,
 				4D06722323EB94E800CCC484 /* DesignCodeUITests */,
@@ -293,6 +296,7 @@
 				4D25B98823F2673B00EA8743 /* UpdateList.swift in Sources */,
 				4DADF82B23EBF82F00D96F0B /* MenuView.swift in Sources */,
 				4D25B98A23F26CB500EA8743 /* UpdateDetail.swift in Sources */,
+				4D25B99223F3E3EC00EA8743 /* RingView.swift in Sources */,
 				4DADF82D23EC08C800D96F0B /* Home.swift in Sources */,
 				4D2AE1E723ED409F0086FD85 /* HomeView.swift in Sources */,
 				4D06720523EB94E000CCC484 /* SceneDelegate.swift in Sources */,
