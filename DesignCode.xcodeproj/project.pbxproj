@@ -20,6 +20,9 @@
 		4D25B98C23F2700B00EA8743 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D25B98B23F2700B00EA8743 /* UpdateStore.swift */; };
 		4D25B98E23F2751C00EA8743 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D25B98D23F2751C00EA8743 /* TabBar.swift */; };
 		4D25B99223F3E3EC00EA8743 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D25B99123F3E3EC00EA8743 /* RingView.swift */; };
+		4D25B99423F3F2EF00EA8743 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D25B99323F3F2EF00EA8743 /* Modifiers.swift */; };
+		4D25B99D23F3FEB300EA8743 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4D25B99B23F3FEB300EA8743 /* OFL.txt */; };
+		4D25B99E23F3FEB300EA8743 /* Sriracha-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D25B99C23F3FEB300EA8743 /* Sriracha-Regular.ttf */; };
 		4D2AE1E723ED409F0086FD85 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2AE1E623ED409F0086FD85 /* HomeView.swift */; };
 		4DADF82B23EBF82F00D96F0B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DADF82A23EBF82F00D96F0B /* MenuView.swift */; };
 		4DADF82D23EC08C800D96F0B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DADF82C23EC08C800D96F0B /* Home.swift */; };
@@ -43,7 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4D0671FF23EB94E000CCC484 /* Design+Code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Design+Code.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D0671FF23EB94E000CCC484 /* DesignCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D06720223EB94E000CCC484 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D06720423EB94E000CCC484 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4D06720623EB94E000CCC484 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +65,9 @@
 		4D25B98B23F2700B00EA8743 /* UpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
 		4D25B98D23F2751C00EA8743 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		4D25B99123F3E3EC00EA8743 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
+		4D25B99323F3F2EF00EA8743 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		4D25B99B23F3FEB300EA8743 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		4D25B99C23F3FEB300EA8743 /* Sriracha-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sriracha-Regular.ttf"; sourceTree = "<group>"; };
 		4D2AE1E623ED409F0086FD85 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4DADF82A23EBF82F00D96F0B /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		4DADF82C23EC08C800D96F0B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -95,7 +101,6 @@
 		4D0671F623EB94E000CCC484 = {
 			isa = PBXGroup;
 			children = (
-				4D25B99123F3E3EC00EA8743 /* RingView.swift */,
 				4D06720123EB94E000CCC484 /* DesignCode */,
 				4D06721823EB94E800CCC484 /* DesignCodeTests */,
 				4D06722323EB94E800CCC484 /* DesignCodeUITests */,
@@ -106,7 +111,7 @@
 		4D06720023EB94E000CCC484 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4D0671FF23EB94E000CCC484 /* Design+Code.app */,
+				4D0671FF23EB94E000CCC484 /* DesignCode.app */,
 				4D06721523EB94E800CCC484 /* DesignCodeTests.xctest */,
 				4D06722023EB94E800CCC484 /* DesignCodeUITests.xctest */,
 			);
@@ -126,7 +131,10 @@
 				4D25B98D23F2751C00EA8743 /* TabBar.swift */,
 				4DADF82C23EC08C800D96F0B /* Home.swift */,
 				4D2AE1E623ED409F0086FD85 /* HomeView.swift */,
+				4D25B99123F3E3EC00EA8743 /* RingView.swift */,
+				4D25B99323F3F2EF00EA8743 /* Modifiers.swift */,
 				4D06720823EB94E700CCC484 /* Assets.xcassets */,
+				4D25B99A23F3FEB300EA8743 /* Sriracha */,
 				4D06720D23EB94E700CCC484 /* LaunchScreen.storyboard */,
 				4D06721023EB94E700CCC484 /* Info.plist */,
 				4D06720A23EB94E700CCC484 /* Preview Content */,
@@ -160,6 +168,15 @@
 			path = DesignCodeUITests;
 			sourceTree = "<group>";
 		};
+		4D25B99A23F3FEB300EA8743 /* Sriracha */ = {
+			isa = PBXGroup;
+			children = (
+				4D25B99B23F3FEB300EA8743 /* OFL.txt */,
+				4D25B99C23F3FEB300EA8743 /* Sriracha-Regular.ttf */,
+			);
+			path = Sriracha;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,7 +194,7 @@
 			);
 			name = DesignCode;
 			productName = DesignCode;
-			productReference = 4D0671FF23EB94E000CCC484 /* Design+Code.app */;
+			productReference = 4D0671FF23EB94E000CCC484 /* DesignCode.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4D06721423EB94E800CCC484 /* DesignCodeTests */ = {
@@ -266,7 +283,9 @@
 			files = (
 				4D06720F23EB94E700CCC484 /* LaunchScreen.storyboard in Resources */,
 				4D06720C23EB94E700CCC484 /* Preview Assets.xcassets in Resources */,
+				4D25B99D23F3FEB300EA8743 /* OFL.txt in Resources */,
 				4D06720923EB94E700CCC484 /* Assets.xcassets in Resources */,
+				4D25B99E23F3FEB300EA8743 /* Sriracha-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +314,7 @@
 				4D25B98C23F2700B00EA8743 /* UpdateStore.swift in Sources */,
 				4D25B98823F2673B00EA8743 /* UpdateList.swift in Sources */,
 				4DADF82B23EBF82F00D96F0B /* MenuView.swift in Sources */,
+				4D25B99423F3F2EF00EA8743 /* Modifiers.swift in Sources */,
 				4D25B98A23F26CB500EA8743 /* UpdateDetail.swift in Sources */,
 				4D25B99223F3E3EC00EA8743 /* RingView.swift in Sources */,
 				4DADF82D23EC08C800D96F0B /* Home.swift in Sources */,
@@ -476,7 +496,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.syntheticfox.DesignCode;
-				PRODUCT_NAME = "Design+Code";
+				PRODUCT_NAME = DesignCode;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -496,7 +516,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.syntheticfox.DesignCode;
-				PRODUCT_NAME = "Design+Code";
+				PRODUCT_NAME = DesignCode;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
