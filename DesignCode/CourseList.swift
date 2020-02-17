@@ -11,6 +11,7 @@ import SwiftUI
 struct CourseList: View {
     @State var courses = courseData
     @State var active = false
+    @State var activeIndex = -1
     
     var body: some View {
         ZStack {
@@ -30,8 +31,17 @@ struct CourseList: View {
                     
                     ForEach(courses.indices, id: \.self) { index in //\.self provices indices
                         GeometryReader { geometry in
-                            CourseView(show: self.$courses[index].show, course: self.courses[index], active: self.$active) //$ necessary cause show is a binding
+                            CourseView(
+                                show: self.$courses[index].show, //$ necessary cause show is a binding
+                                course: self.courses[index],
+                                active: self.$active,
+                                index: index,
+                                activeIndex: self.$activeIndex
+                            )
                                 .offset(y: self.courses[index].show ? -geometry.frame(in: .global).minY : 0) //will offset to top
+                                .opacity(self.activeIndex != index && self.active ? 0 : 1) //fades out inactive cards
+                                .scaleEffect(self.activeIndex != index && self.active ? 0.5 : 1) //changes scale of inactive cards
+                                .offset(x: self.activeIndex != index && self.active ? screen.width : 0) //inactive cards move to the right
                         }
                             //.frame(height: self.courses[index].show ? screen.height : 280)
                             .frame(height: 280)
@@ -58,6 +68,8 @@ struct CourseView: View {
     @Binding var show: Bool
     var course: Course
     @Binding var active: Bool
+    var index: Int
+    @Binding var activeIndex: Int
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -122,6 +134,14 @@ struct CourseView: View {
                 .onTapGesture {
                     self.show.toggle()
                     self.active.toggle()
+                    
+                    //determine which card is active, -1 when no card is active
+                    if self.show {
+                        self.activeIndex = self.index
+                    }
+                    else {
+                        self.activeIndex = -1
+                    }
             }
         }
         .frame(height: show ? screen.height : 280)
