@@ -150,7 +150,7 @@ struct CourseView: View {
                             self.activeView = .zero
                         }
                         : nil //can disable gesture with condition and nil
-                )
+            )
                 .onTapGesture {
                     self.show.toggle()
                     self.active.toggle()
@@ -163,31 +163,37 @@ struct CourseView: View {
                         self.activeIndex = -1
                     }
             }
+            
+            if show {
+               /* CourseDetail(course: course, show: $show, active: $active, activeIndex: $activeIndex)
+                    .background(Color.white)
+                    .animation(nil)*/ //this version summons new view
+            }
         }
         .frame(height: show ? screen.height : 280)
         .scaleEffect(1 - self.activeView.height / 1000)
-        .rotation3DEffect(Angle(degrees: Double(self.activeView.height / 10)), axis: (x: 0, y: 10.0, z: 0)) //rotates as you drag
-        .hueRotation(Angle(degrees: Double(self.activeView.height))) //changes color as you drag
-        .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
-        .gesture( //able to drag from text, code reuse because many states
-            show ?
-                DragGesture().onChanged { value in
-                    guard value.translation.height < 300 else { return } //like a yield, if condition fails won't continue code
-                    guard value.translation.height > 0 else { return } //can't drag up
-                    
-                    self.activeView = value.translation
-                }
-                .onEnded {value in
-                    if self.activeView.height > 50 {
-                        self.show = false
-                        self.active = false
-                        self.activeIndex = -1 //above will reset / close card on release
+            .rotation3DEffect(Angle(degrees: Double(self.activeView.height / 10)), axis: (x: 0, y: 10.0, z: 0)) //rotates as you drag
+            .hueRotation(Angle(degrees: Double(self.activeView.height))) //changes color as you drag
+            .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
+            .gesture( //able to drag from text, code reuse because many states
+                show ?
+                    DragGesture().onChanged { value in
+                        guard value.translation.height < 300 else { return } //like a yield, if condition fails won't continue code
+                        guard value.translation.height > 0 else { return } //can't drag up
+                        
+                        self.activeView = value.translation
                     }
-                    self.activeView = .zero
-                }
-                : nil //can disable gesture with condition and nil
+                    .onEnded {value in
+                        if self.activeView.height > 50 {
+                            self.show = false
+                            self.active = false
+                            self.activeIndex = -1 //above will reset / close card on release
+                        }
+                        self.activeView = .zero
+                    }
+                    : nil //can disable gesture with condition and nil
         )
-        .edgesIgnoringSafeArea(.all)
+            .edgesIgnoringSafeArea(.all)
     }
 }
 
