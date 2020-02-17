@@ -10,29 +10,40 @@ import SwiftUI
 
 struct CourseList: View {
     @State var courses = courseData
+    @State var active = false
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 30) {
-                Text("Courses")
-                    .font(.largeTitle)
-                    .bold()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading, 30)
-                    .padding(.top, 30)
-                
-                ForEach(courses.indices, id: \.self) { index in //\.self provices indices
-                    GeometryReader { geometry in
-                        CourseView(show: self.$courses[index].show, course: self.courses[index]) //$ necessary cause show is a binding
-                            .offset(y: self.courses[index].show ? -geometry.frame(in: .global).minY : 0) //will offset to top
+        ZStack {
+            Color.black.opacity(active ? 0.5 : 0)
+                .animation(.linear)
+                .edgesIgnoringSafeArea(.all)
+            
+            ScrollView {
+                VStack(spacing: 30) {
+                    Text("Courses")
+                        .font(.largeTitle)
+                        .bold()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 30)
+                        .padding(.top, 30)
+                        .blur(radius: active ? 20 : 0)
+                    
+                    ForEach(courses.indices, id: \.self) { index in //\.self provices indices
+                        GeometryReader { geometry in
+                            CourseView(show: self.$courses[index].show, course: self.courses[index], active: self.$active) //$ necessary cause show is a binding
+                                .offset(y: self.courses[index].show ? -geometry.frame(in: .global).minY : 0) //will offset to top
+                        }
+                            //.frame(height: self.courses[index].show ? screen.height : 280)
+                            .frame(height: 280)
+                            .frame(maxWidth: self.courses[index].show ? .infinity : screen.width - 60) //-60 is taking consideration 30 padding from left and right
+                            .zIndex(self.courses[index].show ? 1 : 0) //sets only active card to be on top of ZStack
                     }
-                        //.frame(height: self.courses[index].show ? screen.height : 280)
-                        .frame(height: 280)
-                        .frame(maxWidth: self.courses[index].show ? .infinity : screen.width - 60)
-                } //-60 is taking consideration 30 padding from left and right
+                }
+                .frame(width: screen.width)
+                .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
             }
-            .frame(width: screen.width)
-            //.animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
+            .statusBar(hidden: active)
+            .animation(.linear)
         }
     }
 }
@@ -46,6 +57,7 @@ struct CourseList_Previews: PreviewProvider {
 struct CourseView: View {
     @Binding var show: Bool
     var course: Course
+    @Binding var active: Bool
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -109,6 +121,7 @@ struct CourseView: View {
                 
                 .onTapGesture {
                     self.show.toggle()
+                    self.active.toggle()
             }
         }
         .frame(height: show ? screen.height : 280)
