@@ -19,6 +19,9 @@ struct CourseList: View {
             Color.black.opacity(Double(self.activeView.height / 500)) //opacity of background changes with drag
                 .animation(.linear)
                 .edgesIgnoringSafeArea(.all)
+                .onAppear{
+                    getArray()
+                }            
             
             ScrollView {
                 VStack(spacing: 30) {
