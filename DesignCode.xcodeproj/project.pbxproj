@@ -25,6 +25,8 @@
 		4D25B99E23F3FEB300EA8743 /* Sriracha-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D25B99C23F3FEB300EA8743 /* Sriracha-Regular.ttf */; };
 		4D26BCE223F5E7B100F8C110 /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26BCE123F5E7B100F8C110 /* CourseList.swift */; };
 		4D26BCE423FB4E8C00F8C110 /* CourseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26BCE323FB4E8C00F8C110 /* CourseDetail.swift */; };
+		4D26BCE623FBB2B700F8C110 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26BCE523FBB2B600F8C110 /* Data.swift */; };
+		4D26BCE823FBB4EE00F8C110 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26BCE723FBB4EE00F8C110 /* PostList.swift */; };
 		4D2AE1E723ED409F0086FD85 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2AE1E623ED409F0086FD85 /* HomeView.swift */; };
 		4DADF82B23EBF82F00D96F0B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DADF82A23EBF82F00D96F0B /* MenuView.swift */; };
 		4DADF82D23EC08C800D96F0B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DADF82C23EC08C800D96F0B /* Home.swift */; };
@@ -72,6 +74,8 @@
 		4D25B99C23F3FEB300EA8743 /* Sriracha-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sriracha-Regular.ttf"; sourceTree = "<group>"; };
 		4D26BCE123F5E7B100F8C110 /* CourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
 		4D26BCE323FB4E8C00F8C110 /* CourseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetail.swift; sourceTree = "<group>"; };
+		4D26BCE523FBB2B600F8C110 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		4D26BCE723FBB4EE00F8C110 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		4D2AE1E623ED409F0086FD85 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4DADF82A23EBF82F00D96F0B /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		4DADF82C23EC08C800D96F0B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 				4D26BCE323FB4E8C00F8C110 /* CourseDetail.swift */,
 				4D2AE1E623ED409F0086FD85 /* HomeView.swift */,
 				4D25B99123F3E3EC00EA8743 /* RingView.swift */,
+				4D26BCE523FBB2B600F8C110 /* Data.swift */,
+				4D26BCE723FBB4EE00F8C110 /* PostList.swift */,
 				4D25B99323F3F2EF00EA8743 /* Modifiers.swift */,
 				4D06720823EB94E700CCC484 /* Assets.xcassets */,
 				4D25B99A23F3FEB300EA8743 /* Sriracha */,
@@ -317,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D06720323EB94E000CCC484 /* AppDelegate.swift in Sources */,
+				4D26BCE623FBB2B700F8C110 /* Data.swift in Sources */,
 				4D25B98C23F2700B00EA8743 /* UpdateStore.swift in Sources */,
 				4D25B98823F2673B00EA8743 /* UpdateList.swift in Sources */,
 				4DADF82B23EBF82F00D96F0B /* MenuView.swift in Sources */,
@@ -326,6 +333,7 @@
 				4DADF82D23EC08C800D96F0B /* Home.swift in Sources */,
 				4D2AE1E723ED409F0086FD85 /* HomeView.swift in Sources */,
 				4D06720523EB94E000CCC484 /* SceneDelegate.swift in Sources */,
+				4D26BCE823FBB4EE00F8C110 /* PostList.swift in Sources */,
 				4D06720723EB94E000CCC484 /* ContentView.swift in Sources */,
 				4D26BCE423FB4E8C00F8C110 /* CourseDetail.swift in Sources */,
 				4D25B98E23F2751C00EA8743 /* TabBar.swift in Sources */,
