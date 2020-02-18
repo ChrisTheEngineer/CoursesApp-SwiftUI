@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CourseList: View {
-    @State var courses = courseData
+    @ObservedObject var store = CourseStore()
     @State var active = false
     @State var activeIndex = -1
     @State var activeView = CGSize.zero
@@ -19,9 +19,6 @@ struct CourseList: View {
             Color.black.opacity(Double(self.activeView.height / 500)) //opacity of background changes with drag
                 .animation(.linear)
                 .edgesIgnoringSafeArea(.all)
-                .onAppear{
-                    getArray()
-                }            
             
             ScrollView {
                 VStack(spacing: 30) {
@@ -33,25 +30,25 @@ struct CourseList: View {
                         .padding(.top, 30)
                         .blur(radius: active ? 20 : 0)
                     
-                    ForEach(courses.indices, id: \.self) { index in //\.self provices indices
+                    ForEach(store.courses.indices, id: \.self) { index in //\.self provices indices
                         GeometryReader { geometry in
                             CourseView(
-                                show: self.$courses[index].show, //$ necessary cause show is a binding
-                                course: self.courses[index],
+                                show: self.$store.courses[index].show, //$ necessary cause show is a binding
+                                course: self.store.courses[index],
                                 active: self.$active,
                                 index: index,
                                 activeIndex: self.$activeIndex,
                                 activeView: self.$activeView
                             )
-                                .offset(y: self.courses[index].show ? -geometry.frame(in: .global).minY : 0) //will offset to top
+                                .offset(y: self.store.courses[index].show ? -geometry.frame(in: .global).minY : 0) //will offset to top
                                 .opacity(self.activeIndex != index && self.active ? 0 : 1) //fades out inactive cards
                                 .scaleEffect(self.activeIndex != index && self.active ? 0.5 : 1) //changes scale of inactive cards
                                 .offset(x: self.activeIndex != index && self.active ? screen.width : 0) //inactive cards move to the right
                         }
                             //.frame(height: self.courses[index].show ? screen.height : 280)
                             .frame(height: 280)
-                            .frame(maxWidth: self.courses[index].show ? .infinity : screen.width - 60) //-60 is taking consideration 30 padding from left and right
-                            .zIndex(self.courses[index].show ? 1 : 0) //sets only active card to be on top of ZStack
+                            .frame(maxWidth: self.store.courses[index].show ? .infinity : screen.width - 60) //-60 is taking consideration 30 padding from left and right
+                            .zIndex(self.store.courses[index].show ? 1 : 0) //sets only active card to be on top of ZStack
                     }
                 }
                 .frame(width: screen.width)
