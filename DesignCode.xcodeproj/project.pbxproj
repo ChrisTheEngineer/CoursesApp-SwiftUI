@@ -32,6 +32,7 @@
 		4D6BF90523FBBB7E00D544B5 /* Contentful in Frameworks */ = {isa = PBXBuildFile; productRef = 4D6BF90423FBBB7E00D544B5 /* Contentful */; };
 		4D6BF90723FBBE1E00D544B5 /* CourseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6BF90623FBBE1E00D544B5 /* CourseStore.swift */; };
 		4DA48ECB23FBC88B00B22594 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4DA48ECA23FBC88B00B22594 /* SDWebImageSwiftUI */; };
+		4DA48ECD23FBCECB00B22594 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA48ECC23FBCECB00B22594 /* BlurView.swift */; };
 		4DADF82B23EBF82F00D96F0B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DADF82A23EBF82F00D96F0B /* MenuView.swift */; };
 		4DADF82D23EC08C800D96F0B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DADF82C23EC08C800D96F0B /* Home.swift */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		4D2AE1E623ED409F0086FD85 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4D6BF90123FBB92000D544B5 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		4D6BF90623FBBE1E00D544B5 /* CourseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseStore.swift; sourceTree = "<group>"; };
+		4DA48ECC23FBCECB00B22594 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		4DADF82A23EBF82F00D96F0B /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		4DADF82C23EC08C800D96F0B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 				4D25B98923F26CB500EA8743 /* UpdateDetail.swift */,
 				4D25B98B23F2700B00EA8743 /* UpdateStore.swift */,
 				4D25B98D23F2751C00EA8743 /* TabBar.swift */,
+				4DA48ECC23FBCECB00B22594 /* BlurView.swift */,
 				4DADF82C23EC08C800D96F0B /* Home.swift */,
 				4D26BCE123F5E7B100F8C110 /* CourseList.swift */,
 				4D6BF90623FBBE1E00D544B5 /* CourseStore.swift */,
@@ -356,6 +359,7 @@
 				4D26BCE823FBB4EE00F8C110 /* PostList.swift in Sources */,
 				4D06720723EB94E000CCC484 /* ContentView.swift in Sources */,
 				4D26BCE423FB4E8C00F8C110 /* CourseDetail.swift in Sources */,
+				4DA48ECD23FBCECB00B22594 /* BlurView.swift in Sources */,
 				4D25B98E23F2751C00EA8743 /* TabBar.swift in Sources */,
 				4D26BCE223F5E7B100F8C110 /* CourseList.swift in Sources */,
 			);
