@@ -19,7 +19,9 @@ class Api {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
         
         URLSession.shared.dataTask(with: url) { (data, _, _) in //_ means not used, can add ! after url to mean that it will not be empty, but using guard is better
-            let posts = try! JSONDecoder().decode([Post].self, from: data!)
+            guard let data = data else { return }
+            
+            let posts = try! JSONDecoder().decode([Post].self, from: data)
             
             DispatchQueue.main.async { //run async
                 completion(posts)
