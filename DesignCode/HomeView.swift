@@ -26,10 +26,11 @@ struct HomeView: View {
                     
                     Button(action: { self.showUpdate.toggle() }) {
                         Image(systemName: "bell")
-                            .renderingMode(.original)
+                            //.renderingMode(.original)
+                            .foregroundColor(.primary)
                             .font(.system(size: 16, weight: .medium))
                             .frame(width: 36, height: 36)
-                            .background(Color.white)
+                            .background(Color("background3"))
                             .clipShape(Circle())
                             .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
                             .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)
@@ -83,6 +84,7 @@ struct HomeView: View {
                 
                 Spacer()
             }
+            .frame(width: screen.width)
         }
     }
 }
@@ -157,7 +159,7 @@ struct WatchRingsView: View {
                 //.modifier(FontModifier()) //can apply modifier to VStack, all children would use the modifier
             }
             .padding(8)
-            .background(Color.white)
+            .background(Color("background3"))
             .cornerRadius(20)
                 .modifier(ShadowModifier()) //can create custom reusable modifiers (such as double shadow)
             
@@ -166,7 +168,7 @@ struct WatchRingsView: View {
                 
             }
             .padding(8)
-            .background(Color.white)
+            .background(Color("background3"))
             .cornerRadius(20)
             .modifier(ShadowModifier())
             
@@ -175,7 +177,7 @@ struct WatchRingsView: View {
                 
             }
             .padding(8)
-            .background(Color.white)
+            .background(Color("background3"))
             .cornerRadius(20)
             .modifier(ShadowModifier())
         }

@@ -16,10 +16,10 @@ struct TabBar: View {
                 Text("Home")
             }
             
-            ContentView().tabItem {
+            CourseList().tabItem {
                 Image(systemName: "rectangle.stack.fill")
                 
-                Text("Certificates")
+                Text("Courses")
             }
         }
         .edgesIgnoringSafeArea(.top)
