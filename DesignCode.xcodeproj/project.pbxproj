@@ -35,6 +35,7 @@
 		4DA48ECD23FBCECB00B22594 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA48ECC23FBCECB00B22594 /* BlurView.swift */; };
 		4DADF82B23EBF82F00D96F0B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DADF82A23EBF82F00D96F0B /* MenuView.swift */; };
 		4DADF82D23EC08C800D96F0B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DADF82C23EC08C800D96F0B /* Home.swift */; };
+		AA57DB7624B5370600085EF1 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA57DB7524B5370600085EF1 /* Buttons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		4DA48ECC23FBCECB00B22594 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		4DADF82A23EBF82F00D96F0B /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		4DADF82C23EC08C800D96F0B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		AA57DB7524B5370600085EF1 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				4D25B98B23F2700B00EA8743 /* UpdateStore.swift */,
 				4D25B98D23F2751C00EA8743 /* TabBar.swift */,
 				4DA48ECC23FBCECB00B22594 /* BlurView.swift */,
+				AA57DB7524B5370600085EF1 /* Buttons.swift */,
 				4DADF82C23EC08C800D96F0B /* Home.swift */,
 				4D26BCE123F5E7B100F8C110 /* CourseList.swift */,
 				4D6BF90623FBBE1E00D544B5 /* CourseStore.swift */,
@@ -358,6 +361,7 @@
 				4D06720523EB94E000CCC484 /* SceneDelegate.swift in Sources */,
 				4D26BCE823FBB4EE00F8C110 /* PostList.swift in Sources */,
 				4D06720723EB94E000CCC484 /* ContentView.swift in Sources */,
+				AA57DB7624B5370600085EF1 /* Buttons.swift in Sources */,
 				4D26BCE423FB4E8C00F8C110 /* CourseDetail.swift in Sources */,
 				4DA48ECD23FBCECB00B22594 /* BlurView.swift in Sources */,
 				4D25B98E23F2751C00EA8743 /* TabBar.swift in Sources */,

@@ -27,6 +27,7 @@ struct Home: View {
                         Spacer()
                     }
                     .background(Color("background1"))
+                    
                 )
                 .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                 .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 20)
