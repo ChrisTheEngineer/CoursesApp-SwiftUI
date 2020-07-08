@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct Buttons: View {
+    @State var tap = false
+    @State var press = false
+    
     var body: some View {
         VStack { //Neumorphic Buttons
             Text("Button")
@@ -16,10 +19,10 @@ struct Buttons: View {
                 .frame(width:200, height: 60)
                 .background(
                     ZStack {
-                        Color(#colorLiteral(red: 0.8195130229, green: 0.6300581098, blue: 0.8301144242, alpha: 1)) //same as drop shadow
+                        Color(press ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0.8195130229, green: 0.6300581098, blue: 0.8301144242, alpha: 1)) //same as drop shadow
                         
                         RoundedRectangle(cornerRadius: 16, style: .continuous) //upper left brightness
-                            .foregroundColor(.white)
+                            .foregroundColor(Color(press ? #colorLiteral(red: 0.8195130229, green: 0.6300581098, blue: 0.8301144242, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
                             .blur(radius:4)
                             .offset(x:-8, y:-8)
                         
@@ -33,12 +36,41 @@ struct Buttons: View {
                     }
             )
                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                .shadow(color: Color(#colorLiteral(red: 0.8195130229, green: 0.6300581098, blue: 0.8301144242, alpha: 1)), radius: 20, x: 20, y: 20)
-                .shadow(color: Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)), radius: 20, x: -20, y: -20)
+                .overlay(
+                    HStack {
+                        Image(systemName: "person.crop.circle")
+                            .font(.system(size: 24, weight: .light))
+                            .foregroundColor(Color.white.opacity(press ? 0 : 1)) //toggles icon
+                            .frame(width: press ? 64 :54, height: press ? 4 : 50) //turn into line
+                            .background(Color(#colorLiteral(red: 0.6530441642, green: 0.3625520468, blue: 1, alpha: 1)))
+                            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                            .shadow(color: Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)).opacity(0.3), radius: 10, x: 10, y: 10)
+                            .offset(x: press ? 70 : -10, y: press ? 16 : 0) //moves to middle
+                        
+                        Spacer()
+                    }
+                    
+            )
+                .shadow(color: Color(press ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0.8195130229, green: 0.6300581098, blue: 0.8301144242, alpha: 1)), radius: 20, x: 20, y: 20)
+                .shadow(color: Color(press ? #colorLiteral(red: 0.8195130229, green: 0.6300581098, blue: 0.8301144242, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)), radius: 20, x: -20, y: -20)
+                .scaleEffect(tap ? 1.2 : 1)
+                .gesture(
+                    LongPressGesture(minimumDuration: 0.5, maximumDistance: 10).onChanged { value in
+                        self.tap = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { //timer
+                            self.tap = false
+                        }
+                        
+                    }
+                    .onEnded { value in
+                        self.press.toggle()
+                    }
+            )
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(#colorLiteral(red: 0.9121050239, green: 0.865039587, blue: 1, alpha: 1)))
         .edgesIgnoringSafeArea(.all)
+        .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0))
     }
 }
 
