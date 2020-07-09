@@ -8,13 +8,31 @@
 
 import SwiftUI
 
+func haptic(type: UINotificationFeedbackGenerator.FeedbackType) {
+    UINotificationFeedbackGenerator().notificationOccurred(type)
+}
+
+func impact(style: UIImpactFeedbackGenerator.FeedbackStyle) {
+    //allows for different levels of haptic vibration
+    UIImpactFeedbackGenerator(style: style).impactOccurred()
+}
+
+func simpleSuccess() {
+    let generator = UINotificationFeedbackGenerator()
+    generator.notificationOccurred(.success)
+}
+
 struct Buttons: View {
     
     var body: some View {
         VStack(spacing: 50) { //Neumorphic Buttons
             RectangleButton()
             
+            
             CircleButton()
+                .onTapGesture {
+                    haptic(type: .success)
+            }
             
             PayButton()
         }
@@ -38,6 +56,7 @@ struct RectangleButton: View {
     var body: some View {
         Text("Button")
             .font(.system(size: 20, weight: .semibold, design: .rounded))
+            .foregroundColor(Color(#colorLiteral(red: 0.3543717265, green: 0.1941342354, blue: 0.552323103, alpha: 1)))
             .frame(width:200, height: 60)
             .background(
                 ZStack {
@@ -79,6 +98,7 @@ struct RectangleButton: View {
             .gesture(
                 LongPressGesture(minimumDuration: 0.5, maximumDistance: 10).onChanged { value in
                     self.tap = true
+                    impact(style: .heavy)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { //timer
                         self.tap = false
                     }
@@ -86,6 +106,7 @@ struct RectangleButton: View {
                 }
                 .onEnded { value in
                     self.press.toggle()
+                    haptic(type: .success)
                 }
         )
     }
@@ -99,11 +120,13 @@ struct CircleButton: View {
         ZStack {
             Image(systemName: "sun.max")
                 .font(.system(size: 44, weight: .light))
+                .foregroundColor(Color(#colorLiteral(red: 0.3543717265, green: 0.1941342354, blue: 0.552323103, alpha: 1)))
                 .offset(x: press ? -90 : 0, y: press ? -90 : 0)
                 .rotation3DEffect(Angle(degrees: press ? 20 : 0), axis: (x: 10, y: -10, z: 0)) //rotates icon as if around a sphere
             
             Image(systemName: "moon")
                 .font(.system(size: 44, weight: .light))
+                .foregroundColor(Color(#colorLiteral(red: 0.3543717265, green: 0.1941342354, blue: 0.552323103, alpha: 1)))
                 .offset(x: press ? 0 : 90, y: press ? 0 : 90)
                 .rotation3DEffect(Angle(degrees: press ? 0 : 20), axis: (x: -10, y: 10, z: 0))
         }
