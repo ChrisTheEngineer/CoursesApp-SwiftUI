@@ -36,6 +36,7 @@
 		4DADF82B23EBF82F00D96F0B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DADF82A23EBF82F00D96F0B /* MenuView.swift */; };
 		4DADF82D23EC08C800D96F0B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DADF82C23EC08C800D96F0B /* Home.swift */; };
 		AA57DB7624B5370600085EF1 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA57DB7524B5370600085EF1 /* Buttons.swift */; };
+		AAE9999124B7AFA500C02E85 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE9999024B7AFA500C02E85 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		4DADF82A23EBF82F00D96F0B /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		4DADF82C23EC08C800D96F0B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		AA57DB7524B5370600085EF1 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		AAE9999024B7AFA500C02E85 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				4D26BCE523FBB2B600F8C110 /* Data.swift */,
 				4D6BF90123FBB92000D544B5 /* DataStore.swift */,
 				4D26BCE723FBB4EE00F8C110 /* PostList.swift */,
+				AAE9999024B7AFA500C02E85 /* LoginView.swift */,
 				4D25B99323F3F2EF00EA8743 /* Modifiers.swift */,
 				4D06720823EB94E700CCC484 /* Assets.xcassets */,
 				4D25B99A23F3FEB300EA8743 /* Sriracha */,
@@ -361,6 +364,7 @@
 				4D06720523EB94E000CCC484 /* SceneDelegate.swift in Sources */,
 				4D26BCE823FBB4EE00F8C110 /* PostList.swift in Sources */,
 				4D06720723EB94E000CCC484 /* ContentView.swift in Sources */,
+				AAE9999124B7AFA500C02E85 /* LoginView.swift in Sources */,
 				AA57DB7624B5370600085EF1 /* Buttons.swift in Sources */,
 				4D26BCE423FB4E8C00F8C110 /* CourseDetail.swift in Sources */,
 				4DA48ECD23FBCECB00B22594 /* BlurView.swift in Sources */,
